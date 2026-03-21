@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roshan Pasupathi — Product Manager</title>
+  <meta name="description" content="Senior Digital Product Manager who keeps seeing the platform where others see the feature. Built a communication system serving 51M+ banking customers.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            surface: '#f5f5f7',
+            card: '#ffffff',
+            muted: '#86868b',
+            accent: '#0071e3',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { -webkit-font-smoothing: antialiased; }
+    body { overflow-x: hidden; }
+    .bento-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+    .bento-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .card-link {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      background: rgba(0,113,227,0.06);
+      border: 1px solid rgba(0,113,227,0.1);
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #0071e3;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .card-link:hover { background: rgba(0,113,227,0.12); border-color: rgba(0,113,227,0.2); }
+    .card-link svg { width: 10px; height: 10px; opacity: 0.7; }
+    .nav-pill { transition: all 0.2s ease; }
+    .nav-pill:hover { background: #f0f0f0; }
+    .nav-pill.active { background: #1d1d1f; color: #fff; }
+    .nav-pill.active:hover { background: #333; }
+    .stat-number { font-variant-numeric: tabular-nums; }
+    html { scroll-behavior: smooth; }
+    .tag-scroll {
+      display: flex;
+      gap: 8px;
+      animation: scroll-left 20s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .company-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      object-fit: contain;
+      flex-shrink: 0;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.05);
+      padding: 4px;
+    }
+    @media (max-width: 640px) {
+      .bento-card {
+        border-radius: 18px;
+      }
+      .card-link {
+        position: static;
+        margin-top: 16px;
+        width: fit-content;
+      }
+      .company-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+      }
+    }
+    @media (max-width: 420px) {
+      .hero-intro {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-intro img {
+        width: 72px;
+        height: 72px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface font-sans text-[#1d1d1f] min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="fixed top-3 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-max -translate-x-1/2 sm:top-4">
+    <div class="flex items-center justify-between gap-1 bg-white/80 backdrop-blur-xl rounded-full px-1.5 py-1.5 shadow-sm border border-black/5 sm:justify-center">
+      <a href="#home" class="nav-pill active rounded-full px-3 py-2 text-xs font-medium sm:px-4 sm:py-1.5 sm:text-sm">Home</a>
+      <a href="#spotlight" class="nav-pill rounded-full px-3 py-2 text-xs font-medium text-[#1d1d1f]/70 flex items-center gap-1 sm:px-4 sm:py-1.5 sm:text-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Work
+      </a>
+      <a href="#journey" class="nav-pill rounded-full px-3 py-2 text-xs font-medium text-[#1d1d1f]/70 sm:px-4 sm:py-1.5 sm:text-sm">Journey</a>
+      <a href="#contact" class="nav-pill rounded-full px-3 py-2 text-xs font-medium text-[#1d1d1f]/70 sm:px-4 sm:py-1.5 sm:text-sm">Contact</a>
+    </div>
+  </nav>
+
+  <main class="max-w-[1200px] mx-auto px-3 pt-24 pb-10 sm:px-4 sm:pt-20 sm:pb-12">
+
+    <!-- ============================================ -->
+    <!-- 1. HERO — Who am I?                          -->
+    <!-- ============================================ -->
+    <section id="home" class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4 scroll-mt-24 sm:scroll-mt-28">
+
+      <!-- Hero Left: About Me -->
+      <div class="bento-card p-6 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[360px] lg:min-h-[420px]">
+        <div class="hero-intro flex items-center gap-4 sm:gap-5 mb-6">
+          <img src="public/roshan.jpeg" alt="Roshan Pasupathi" class="w-20 h-20 rounded-full object-cover flex-shrink-0 border-2 border-white shadow-md">
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-bold leading-tight">Roshan Pasupathi</h1>
+            <p class="text-sm text-muted mt-1">Senior Product Manager</p>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-[15px] text-[#1d1d1f]/75 leading-relaxed sm:text-base">
+          <p>I'm a product manager who loves building things that work at scale. I've spent the last 7+ years in banking and fintech, turning narrow problems into platform-level solutions for millions of customers.</p>
+          <p>I'm a metallurgist by degree — graduated from IIT Roorkee — but I followed my curiosity into tech right when smartphones were exploding. Never looked back.</p>
+          <p>Outside of work, I'm an AI and automation hobbyist — I code transformers from scratch, build agentic apps, and tinker with workflows. I read a lot of fantasy fiction, and I'm a former competitive weightlifter.</p>
+        </div>
+
+        <div class="flex gap-3 mt-6">
+          <a href="https://www.linkedin.com/in/roshan-pasupathi-99314388/" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-accent transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/dino1908" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-[#1d1d1f] transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="mailto:roshanpasupathi903@gmail.com" class="text-muted hover:text-red-500 transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Right: Role + Stats -->
+      <div class="flex flex-col gap-4">
+        <!-- Current Role -->
+        <div class="bento-card p-5 sm:p-6">
+          <div class="flex flex-wrap items-start gap-3 mb-3 sm:items-center">
+            <img src="https://www.wellsfargo.com/favicon.ico" alt="Wells Fargo" class="w-8 h-8 rounded-lg object-contain bg-white border border-black/5 p-1">
+            <div class="min-w-0">
+              <p class="text-sm font-bold text-[#1d1d1f]">Wells Fargo</p>
+              <p class="text-[11px] text-muted">Sr. Digital Product Manager/Owner · Sr. AVP</p>
+            </div>
+            <span class="px-2 py-0.5 bg-green-50 text-green-600 rounded text-[10px] font-medium sm:ml-auto">Current</span>
+          </div>
+          <p class="text-sm text-[#1d1d1f]/70 leading-relaxed">Owning the small business lending acquisition journey across web, app & digital-in-branch channels. Leading 3 cross-functional scrum teams and championing Gen AI adoption across the lending & cards org.</p>
+        </div>
+
+        <!-- Company trail -->
+        <div class="bento-card p-5">
+          <p class="text-[10px] uppercase tracking-widest text-muted mb-3 font-medium">Previously at</p>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
+            <div class="flex items-center gap-2">
+              <img src="https://companieslogo.com/img/orig/KOTAKBANK.NS-36440c5e.png" alt="Kotak Mahindra Bank" class="w-7 h-7 rounded-md object-contain bg-white border border-black/5 p-0.5">
+              <span class="text-xs font-medium">Kotak Mahindra Bank</span>
+            </div>
+            <span class="text-muted text-xs">·</span>
+            <div class="flex items-center gap-2">
+              <img src="https://www.mahindra.com/sites/default/files/favicon.png" alt="Mahindra" class="w-7 h-7 rounded-md object-contain bg-white border border-black/5 p-0.5">
+              <span class="text-xs font-medium">Mahindra</span>
+            </div>
+            <span class="text-muted text-xs">·</span>
+            <div class="flex items-center gap-2">
+              <img src="https://www.sulekha.com/favicon.ico" alt="Sulekha" class="w-7 h-7 rounded-md object-contain bg-white border border-black/5 p-0.5">
+              <span class="text-xs font-medium">Sulekha</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats — from resume summary -->
+        <div class="bento-card p-5 sm:p-6">
+          <p class="text-[10px] uppercase tracking-widest text-muted mb-4 font-medium">At a Glance</p>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+            <div class="bg-gradient-to-br from-blue-50/50 to-transparent rounded-xl p-3">
+              <p class="text-2xl font-bold stat-number text-blue-700">7+</p>
+              <p class="text-xs text-[#1d1d1f]/60 mt-0.5">years in product management across lending, cards, and platform products</p>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-50/50 to-transparent rounded-xl p-3">
+              <p class="text-2xl font-bold stat-number text-emerald-700">51M+</p>
+              <p class="text-xs text-[#1d1d1f]/60 mt-0.5">banking customers served through products I've built and managed</p>
+            </div>
+            <div class="bg-gradient-to-br from-violet-50/50 to-transparent rounded-xl p-3">
+              <p class="text-2xl font-bold stat-number text-violet-700">200M+</p>
+              <p class="text-xs text-[#1d1d1f]/60 mt-0.5">daily communications delivered via the platform I built from scratch</p>
+            </div>
+            <div class="bg-gradient-to-br from-amber-50/50 to-transparent rounded-xl p-3">
+              <p class="text-2xl font-bold stat-number text-amber-700">3</p>
+              <p class="text-xs text-[#1d1d1f]/60 mt-0.5">cross-functional agile teams led end-to-end in current role</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 2. SPOTLIGHT — Smart Nudge Platform           -->
+    <!-- ============================================ -->
+    <section id="spotlight" class="mb-4 scroll-mt-24 sm:scroll-mt-28">
+      <div class="bento-card p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-white via-white to-blue-50/40">
+        <div class="flex items-center gap-2 mb-5 sm:mb-6">
+          <span class="w-2 h-2 rounded-full bg-red-400"></span>
+          <p class="text-[10px] uppercase tracking-widest text-muted font-medium">Spotlight · Kotak Mahindra Bank · 2021–2025</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+          <!-- Left: The Story (3 cols) -->
+          <div class="lg:col-span-3">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6">Smart Nudge Platform</h2>
+
+            <!-- Beat 1: The Brief -->
+            <div class="mb-6">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                  <span class="text-blue-600 text-xs font-bold">1</span>
+                </div>
+                <h3 class="text-sm font-semibold uppercase tracking-wide text-muted">The Brief</h3>
+              </div>
+              <p class="text-[15px] text-[#1d1d1f]/80 leading-relaxed pl-0 sm:pl-8">
+                I joined Kotak's Innovation Labs with a straightforward ask — improve nudge CTR for banking customers. Make people click on the messages the bank sends them.
+              </p>
+            </div>
+
+            <!-- Beat 2: The Real Problem -->
+            <div class="mb-6">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                  <span class="text-amber-600 text-xs font-bold">2</span>
+                </div>
+                <h3 class="text-sm font-semibold uppercase tracking-wide text-muted">The Real Problem</h3>
+              </div>
+              <p class="text-[15px] text-[#1d1d1f]/80 leading-relaxed pl-0 sm:pl-8">
+                But the CTR problem was a symptom, not the disease. I found 20+ teams across the bank sending communications through different vendors, each with their own tools, tone, and data silos. Customers got duplicate messages across channels. There was no unified consent, no delivery reports, no feedback loop. The bank was spending heavily on fragmented, sub-optimal tooling when it needed one cohesive platform.
+              </p>
+            </div>
+
+            <!-- Beat 3: What I Did -->
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                  <span class="text-green-600 text-xs font-bold">3</span>
+                </div>
+                <h3 class="text-sm font-semibold uppercase tracking-wide text-muted">What I Built</h3>
+              </div>
+              <p class="text-[15px] text-[#1d1d1f]/80 leading-relaxed pl-0 sm:pl-8">
+                I pitched a product vision to build a bank-wide communication platform — a single egress point for every customer touchpoint across 5 channels. I defined the strategy, mapped success metrics, built the roadmap, and led the team from concept to production over 3 years. I personally went to every LOB, wrote their PRDs, onboarded their use cases, and convinced them to migrate. We reduced 20+ communication teams to 2, cut marketing cost, and gave 51 million customers a unified, consent-driven experience with lifecycle journeys and smart fallback rules.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Impact Metrics (2 cols) -->
+          <div class="lg:col-span-2 flex flex-col gap-3">
+            <div class="bg-surface rounded-2xl p-5 text-center">
+              <p class="text-3xl font-bold stat-number text-[#1d1d1f]">51M+</p>
+              <p class="text-xs text-muted mt-1">customers served</p>
+            </div>
+            <div class="bg-surface rounded-2xl p-5 text-center">
+              <p class="text-3xl font-bold stat-number text-[#1d1d1f]">200M+</p>
+              <p class="text-xs text-muted mt-1">daily communications</p>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-surface rounded-2xl p-4 text-center">
+                <p class="text-lg sm:text-xl font-bold stat-number">&lt;1% → 4%</p>
+                <p class="text-[10px] text-muted mt-1">CTR improvement</p>
+              </div>
+              <div class="bg-surface rounded-2xl p-4 text-center">
+                <p class="text-lg sm:text-xl font-bold stat-number">20+ → 2</p>
+                <p class="text-[10px] text-muted mt-1">teams consolidated</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-surface rounded-2xl p-4 text-center">
+                <p class="text-lg sm:text-xl font-bold stat-number">4 → 30+</p>
+                <p class="text-[10px] text-muted mt-1">team scaled</p>
+              </div>
+              <div class="bg-surface rounded-2xl p-4 text-center">
+                <p class="text-lg sm:text-xl font-bold stat-number">90%+</p>
+                <p class="text-[10px] text-muted mt-1">comms migrated</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 3. HIGHLIGHTS — Memorable stories             -->
+    <!-- ============================================ -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+
+      <!-- In-App OTP -->
+      <div class="bento-card p-5 flex flex-col justify-between min-h-[240px]">
+        <div>
+          <span class="px-2 py-0.5 bg-red-50 text-red-600 rounded text-[10px] font-medium">First in India</span>
+          <h3 class="font-bold text-sm mt-3">In-App OTP</h3>
+          <p class="text-[11px] text-muted mt-0.5">Kotak Mahindra Bank</p>
+          <p class="text-xs text-[#1d1d1f]/60 mt-2 leading-relaxed">8% of customers — mostly NRIs and users with patchy networks — couldn't receive SMS OTPs. They were left stranded during payments. I launched secure in-app OTP as the primary 2FA, achieving 100% coverage. Kotak was the first bank in India to do this. Other major banks followed.</p>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.kotak.bank.mobile&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="card-link">
+          Kotak App
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+        </a>
+      </div>
+
+      <!-- Mahindra Thar -->
+      <div class="bento-card p-5 flex flex-col justify-between min-h-[240px] bg-gradient-to-br from-white to-amber-50/50">
+        <div>
+          <span class="px-2 py-0.5 bg-amber-50 text-amber-600 rounded text-[10px] font-medium">Featured Launch</span>
+          <h3 class="font-serif text-2xl font-bold italic text-[#1d1d1f] mt-3">Mahindra Thar</h3>
+          <p class="text-[11px] text-muted mt-1">Auction Event · 2020</p>
+          <p class="text-xs text-[#1d1d1f]/60 mt-2 leading-relaxed">The group company wanted a massive comeback for India's favorite SUV. I had less than 30 days — alongside my regular work — to build an auction platform from scratch. Small team, tight deadline, high stakes. 5,400 bidders showed up. The Thar sold at <strong>10x</strong> its original value.</p>
+        </div>
+        <a href="https://www.autocarindia.com/car-news/2020-mahindra-thar-1-auctioned-for-rs-111-crore-418752" target="_blank" rel="noopener noreferrer" class="card-link">
+          Autocar Article
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+        </a>
+      </div>
+
+      <!-- Sulekha Origin Story -->
+      <div class="bento-card p-5 flex flex-col justify-between min-h-[240px]">
+        <div>
+          <span class="px-2 py-0.5 bg-teal-50 text-teal-600 rounded text-[10px] font-medium">Origin Story</span>
+          <h3 class="font-bold text-sm mt-3">How I Became a PM</h3>
+          <p class="text-[11px] text-muted mt-0.5">Sulekha.com · 2018</p>
+          <p class="text-xs text-[#1d1d1f]/60 mt-2 leading-relaxed">I joined as a product analyst, curious about what happens behind the screens. I dug into the onboarding funnel, restructured a 7-step flow into 4 steps, and designed an auto-suggest feature that cut drop-offs. When the sales team clashed with digital over commissions, I ran a cohort study that proved they were better together — the CEO approved the new model. Within a year, I was the PM.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- 4. CAREER JOURNEY                             -->
+    <!-- ============================================ -->
+    <section id="journey" class="mb-4 scroll-mt-24 sm:scroll-mt-28">
+      <div class="bento-card p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-white via-white to-emerald-50/30">
+        <p class="text-[10px] uppercase tracking-widest text-muted mb-2 font-medium">Career Journey</p>
+        <p class="text-sm text-[#1d1d1f]/60 mb-8">Every role started with a narrow brief. None ended that way.</p>
+
+        <div class="relative">
+          <div class="absolute left-[19px] top-4 bottom-4 w-px bg-black/10 hidden lg:block"></div>
+
+          <div class="space-y-8 lg:space-y-10">
+            <!-- Wells Fargo -->
+            <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+              <div class="flex items-start gap-3 sm:gap-4 lg:w-[240px] flex-shrink-0">
+                <img src="https://www.wellsfargo.com/favicon.ico" alt="Wells Fargo" class="company-icon z-10">
+                <div>
+                  <p class="text-sm font-semibold">Wells Fargo</p>
+                  <p class="text-[11px] text-muted">Sr. Digital PM · 2025–Present</p>
+                </div>
+              </div>
+              <div class="lg:border-l lg:border-black/5 lg:pl-8 flex-1">
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span class="text-xs font-medium text-muted uppercase tracking-wide">Scoped:</span>
+                  <span class="text-sm text-[#1d1d1f]/80">Small business lending acquisition journey</span>
+                </div>
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mt-1.5">
+                  <span class="text-xs font-medium text-green-600 uppercase tracking-wide">Shipping:</span>
+                  <span class="text-sm text-[#1d1d1f]/80">Owning 3 scrum teams across web, app & branch. Leading Gen AI adoption across the lending & cards org.</span>
+                </div>
+                <a href="https://www.wellsfargo.com/biz/business-credit/lines-of-credit/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] text-accent hover:underline mt-2">
+                  SB Line of Credit
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Kotak -->
+            <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+              <div class="flex items-start gap-3 sm:gap-4 lg:w-[240px] flex-shrink-0">
+                <img src="https://companieslogo.com/img/orig/KOTAKBANK.NS-36440c5e.png" alt="Kotak Mahindra Bank" class="company-icon z-10">
+                <div>
+                  <p class="text-sm font-semibold">Kotak Mahindra Bank</p>
+                  <p class="text-[11px] text-muted">Software PM · 2021–2025</p>
+                </div>
+              </div>
+              <div class="lg:border-l lg:border-black/5 lg:pl-8 flex-1">
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span class="text-xs font-medium text-muted uppercase tracking-wide">Scoped:</span>
+                  <span class="text-sm text-[#1d1d1f]/80">Improve nudge CTR for banking customers</span>
+                </div>
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mt-1.5">
+                  <span class="text-xs font-medium text-green-600 uppercase tracking-wide">Shipped:</span>
+                  <span class="text-sm text-[#1d1d1f]/80">Bank-wide comms platform for 51M customers. Industry-first in-app OTP. New mobile banking notification experience.</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.kotak.bank.mobile&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] text-accent hover:underline mt-2">
+                  Kotak App
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Mahindra -->
+            <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+              <div class="flex items-start gap-3 sm:gap-4 lg:w-[240px] flex-shrink-0">
+                <img src="https://www.mahindra.com/sites/default/files/favicon.png" alt="Mahindra" class="company-icon z-10">
+                <div>
+                  <p class="text-sm font-semibold">Mahindra First Choice</p>
+                  <p class="text-[11px] text-muted">APM · 2019–2021</p>
+                </div>
+              </div>
+              <div class="lg:border-l lg:border-black/5 lg:pl-8 flex-1">
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span class="text-xs font-medium text-muted uppercase tracking-wide">Scoped:</span>
+                  <span class="text-sm text-[#1d1d1f]/80">Increase bids on the vehicle auction platform</span>
+                </div>
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mt-1.5">
+                  <span class="text-xs font-medium text-green-600 uppercase tracking-wide">Shipped:</span>
+                  <span class="text-sm text-[#1d1d1f]/80">Full platform revamp — app adoption 44%→82%, bid-less inventory 35%→17%, buyer participation +12%. Freed up 4 team members to launch 2 new business models.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sulekha -->
+            <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+              <div class="flex items-start gap-3 sm:gap-4 lg:w-[240px] flex-shrink-0">
+                <img src="https://www.sulekha.com/favicon.ico" alt="Sulekha" class="company-icon z-10">
+                <div>
+                  <p class="text-sm font-semibold">Sulekha.com</p>
+                  <p class="text-[11px] text-muted">Analyst → PM · 2018–2019</p>
+                </div>
+              </div>
+              <div class="lg:border-l lg:border-black/5 lg:pl-8 flex-1">
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span class="text-xs font-medium text-muted uppercase tracking-wide">Scoped:</span>
+                  <span class="text-sm text-[#1d1d1f]/80">Analyze onboarding funnel as a product analyst</span>
+                </div>
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mt-1.5">
+                  <span class="text-xs font-medium text-green-600 uppercase tracking-wide">Shipped:</span>
+                  <span class="text-sm text-[#1d1d1f]/80">50% onboarding improvement, 11% digital payments lift, resolved Sales vs Digital conflict with data. Earned the PM title in under a year.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 5. EDUCATION — IIT Roorkee                    -->
+    <!-- ============================================ -->
+    <section id="education" class="mb-4 scroll-mt-24 sm:scroll-mt-28">
+      <div class="bento-card p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-white via-white to-amber-50/40">
+        <p class="text-[10px] uppercase tracking-widest text-muted mb-6 font-medium">Education</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Left: The Degree -->
+          <div>
+            <div class="flex items-start gap-4 mb-4 sm:items-center">
+              <img src="public/iit-roorkee-logo.png" alt="IIT Roorkee" class="w-14 h-14 rounded-xl object-contain bg-white border border-black/5 p-1 flex-shrink-0">
+              <div>
+                <h3 class="text-lg font-bold">Indian Institute of Technology, Roorkee</h3>
+                <p class="text-sm text-muted">B.Tech — Metallurgy & Materials Engineering</p>
+              </div>
+            </div>
+            <p class="text-sm text-[#1d1d1f]/70 leading-relaxed">
+              Founded in 1847 — one of the oldest engineering institutes in the world. Ranked <strong>#339 globally</strong> (QS World University Rankings 2026) and consistently among the <strong>top 5 in India</strong>. Graduated in First Division.
+            </p>
+          </div>
+
+          <!-- Right: Spotlights -->
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wide text-muted mb-4">Spotlights</p>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-medium">Published Researcher</p>
+                  <p class="text-xs text-[#1d1d1f]/60 mt-0.5">Published a paper on enhancing mechanical properties of Aluminum alloy (Al6061) through severe plastic deformation.</p>
+                  <a href="https://www.researchgate.net/publication/312361253_Experimental_and_XFEM_Simulation_of_Tensile_and_Fracture_Behavior_of_Al_6061_Alloy_Processed_by_Severe_Plastic_Deformation" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] text-accent hover:underline mt-1">
+                    Read Paper
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+                  </a>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-medium">NSO Weightlifting Team</p>
+                  <p class="text-xs text-[#1d1d1f]/60 mt-0.5">Member of the National Sports Organization weightlifting team at IIT Roorkee.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 6. THE BUILDER — PM who builds                -->
+    <!-- ============================================ -->
+    <section id="builds" class="mb-4 scroll-mt-24 sm:scroll-mt-28">
+      <div class="bento-card p-6 sm:p-8 lg:p-10 mb-4 bg-gradient-to-br from-white via-white to-violet-50/40">
+        <p class="text-[10px] uppercase tracking-widest text-muted mb-3 font-medium">PM who builds</p>
+        <h2 class="text-xl font-bold mb-2">I build to understand.</h2>
+        <p class="text-sm text-[#1d1d1f]/70 leading-relaxed max-w-2xl">
+          I believe the best PMs know what's under the hood. I don't just ship specs — I prototype, experiment, and build end-to-end. From coding transformers from scratch to shipping AI apps to real users, building is how I stay close to the technology shaping the future of product.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Cover Me -->
+        <div class="bento-card p-5 flex flex-col justify-between min-h-0 sm:min-h-[260px]">
+          <div>
+            <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center mb-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="font-bold text-sm">Cover Me</h3>
+            <p class="text-xs text-[#1d1d1f]/60 mt-1.5 leading-relaxed">My first real AI project. I and a friend built a v1 using Streamlit and LangChain with Cohere as the LLM, then scaled it to 500+ users via Reddit. I later expanded it to generate ATS match reports and LinkedIn messages. Today it runs for free on Dify.ai powered by Gemini.</p>
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              <span class="px-2 py-0.5 bg-violet-50 text-violet-600 rounded text-[10px] font-medium">Gen AI</span>
+              <span class="px-2 py-0.5 bg-violet-50 text-violet-600 rounded text-[10px] font-medium">LangChain</span>
+              <span class="px-2 py-0.5 bg-violet-50 text-violet-600 rounded text-[10px] font-medium">500+ users</span>
+            </div>
+          </div>
+          <a href="https://udify.app/chat/0DtZbFvBiG6U5lce" target="_blank" rel="noopener noreferrer" class="card-link">
+            Try Cover Me
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+          </a>
+        </div>
+
+        <!-- GPT-2 Deep Learning -->
+        <div class="bento-card p-5 flex flex-col justify-between min-h-0 sm:min-h-[260px]">
+          <div>
+            <div class="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl flex items-center justify-center mb-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="font-bold text-sm">GPT-2 from Scratch</h3>
+            <p class="text-xs text-[#1d1d1f]/60 mt-1.5 leading-relaxed">I wanted to understand how LLMs actually work — not from blog posts, but by building one. I coded a decoder-only transformer (GPT-2 style) from scratch in PyTorch. Then I went deeper — experimenting with multiple attention mechanisms to understand model behavior and trade-offs. That led to an optimized version with improved performance.</p>
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              <span class="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-[10px] font-medium">PyTorch</span>
+              <span class="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-[10px] font-medium">Transformers</span>
+              <span class="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-[10px] font-medium">Deep Learning</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2" style="position: relative;">
+            <a href="https://github.com/dino1908/GPT2" target="_blank" rel="noopener noreferrer" class="card-link" style="position: relative; left: 0;">
+              GPT-2
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+            </a>
+            <a href="https://github.com/dino1908/Optimized_GPT2" target="_blank" rel="noopener noreferrer" class="card-link" style="position: relative; left: 0;">
+              Optimized
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- AI Agents & Automations -->
+        <div class="bento-card p-5 flex flex-col justify-between min-h-0 sm:min-h-[260px]">
+          <div>
+            <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+            <h3 class="font-bold text-sm">AI Agents & Automations</h3>
+            <p class="text-xs text-[#1d1d1f]/60 mt-1.5 leading-relaxed">Built a low-fidelity chatbot using Streamlit and LangChain to explore RAG, tool calling, and MCP-style integration. Experimented with image generation (Stable Diffusion, Flux, ControlNets). Used n8n to design automation workflows integrating Telegram, Google Workspace, and Airtable. Currently focused on fine-tuning SLMs with Unsloth.</p>
+            <div class="flex gap-1.5 mt-2 flex-wrap">
+              <span class="px-2 py-0.5 bg-cyan-50 text-cyan-600 rounded text-[10px] font-medium">RAG</span>
+              <span class="px-2 py-0.5 bg-cyan-50 text-cyan-600 rounded text-[10px] font-medium">n8n</span>
+              <span class="px-2 py-0.5 bg-cyan-50 text-cyan-600 rounded text-[10px] font-medium">Stable Diffusion</span>
+              <span class="px-2 py-0.5 bg-cyan-50 text-cyan-600 rounded text-[10px] font-medium">Unsloth</span>
+            </div>
+          </div>
+          <a href="https://github.com/dino1908/GenAI_POC_streamlit" target="_blank" rel="noopener noreferrer" class="card-link">
+            GitHub
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 7. SKILLS / TOOLKIT                           -->
+    <!-- ============================================ -->
+    <div class="bento-card p-4 sm:p-5 mb-4 overflow-hidden">
+      <p class="text-[10px] uppercase tracking-widest text-muted mb-3 font-medium">Toolkit</p>
+      <div class="space-y-2 overflow-hidden">
+        <div class="flex gap-2 tag-scroll" style="animation-duration: 25s;">
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Product Vision</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Strategy & Roadmap</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">OKRs & Prioritization</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">User Stories</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Release Planning</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">A/B Testing</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Funnel Analysis</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">SQL & Tableau</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Product Vision</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Strategy & Roadmap</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">OKRs & Prioritization</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">User Stories</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Release Planning</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">A/B Testing</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Funnel Analysis</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">SQL & Tableau</span>
+        </div>
+        <div class="flex gap-2 tag-scroll" style="animation-direction: reverse; animation-duration: 22s;">
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Scrum & SAFe</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Sprint Planning</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">JIRA & Confluence</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Journey Mapping</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Wireframes & Figma</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">PRDs</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Go-to-Market</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Glassbox & Splunk</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Scrum & SAFe</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Sprint Planning</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">JIRA & Confluence</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Journey Mapping</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Wireframes & Figma</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">PRDs</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Go-to-Market</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Glassbox & Splunk</span>
+        </div>
+        <div class="flex gap-2 tag-scroll" style="animation-duration: 28s;">
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Python & PyTorch</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">LangChain</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Streamlit</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">AWS & GCP</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">n8n Workflows</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Adobe AEM/AEP</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Google Analytics</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Postman & UAT</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Python & PyTorch</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">LangChain</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Streamlit</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">AWS & GCP</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">n8n Workflows</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Adobe AEM/AEP</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Google Analytics</span>
+          <span class="px-3 py-1.5 bg-surface rounded-lg text-xs font-medium whitespace-nowrap border border-black/5">Postman & UAT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- 8. CONTACT                                    -->
+    <!-- ============================================ -->
+    <section id="contact" class="bento-card p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-white via-white to-sky-50/30 scroll-mt-24 sm:scroll-mt-28">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <p class="text-[10px] uppercase tracking-widest text-muted mb-4 font-medium">Get in touch</p>
+          <h2 class="text-2xl font-bold mb-2">Let's talk.</h2>
+          <p class="text-sm text-[#1d1d1f]/60 leading-relaxed max-w-md">Open to PM roles with strategic scope, autonomy, and scale — ideally at HQ where strategy happens. Happy to chat about products, AI, or anything interesting.</p>
+          <p class="text-sm text-[#1d1d1f]/60 mt-2">Bangalore, India · Open to relocate</p>
+        </div>
+        <div class="space-y-2 min-w-0">
+          <a href="mailto:roshanpasupathi903@gmail.com" class="flex items-center gap-3 p-3 bg-surface rounded-xl hover:bg-black/5 transition-colors group">
+            <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d1d1f" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+            </div>
+            <div class="min-w-0">
+              <p class="text-sm font-medium group-hover:text-accent transition-colors">Email</p>
+              <p class="text-[11px] text-muted break-all">roshanpasupathi903@gmail.com</p>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/roshan-pasupathi-99314388/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-surface rounded-xl hover:bg-black/5 transition-colors group">
+            <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#0077b5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="min-w-0">
+              <p class="text-sm font-medium group-hover:text-accent transition-colors">LinkedIn</p>
+              <p class="text-[11px] text-muted break-all">linkedin.com/in/roshan-pasupathi</p>
+            </div>
+          </a>
+          <a href="https://github.com/dino1908" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-surface rounded-xl hover:bg-black/5 transition-colors group">
+            <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#1d1d1f"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div class="min-w-0">
+              <p class="text-sm font-medium group-hover:text-accent transition-colors">GitHub</p>
+              <p class="text-[11px] text-muted break-all">github.com/dino1908</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-6 text-xs text-muted">
+    <p>Built with curiosity · Roshan Pasupathi · 2025</p>
+  </footer>
+
+  <!-- Navigation active state handler -->
+  <script>
+    const navLinks = document.querySelectorAll('.nav-pill');
+
+    function updateNav() {
+      let current = '';
+      const scrollY = window.scrollY + 120;
+      document.querySelectorAll('[id]').forEach(section => {
+        if (section.offsetTop <= scrollY) {
+          current = section.id;
+        }
+      });
+      const idToNav = {
+        'home': '#home',
+        'spotlight': '#spotlight',
+        'journey': '#journey',
+        'education': '#journey',
+        'builds': '#spotlight',
+        'contact': '#contact'
+      };
+      const activeHref = idToNav[current] || '#home';
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        link.classList.add('text-[#1d1d1f]/70');
+        if (link.getAttribute('href') === activeHref) {
+          link.classList.add('active');
+          link.classList.remove('text-[#1d1d1f]/70');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateNav, { passive: true });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
