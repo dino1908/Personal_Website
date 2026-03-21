@@ -60,6 +60,16 @@
     }
     .card-link:hover { background: rgba(0,113,227,0.12); border-color: rgba(0,113,227,0.2); }
     .card-link svg { width: 10px; height: 10px; opacity: 0.7; }
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .card-actions .card-link {
+      position: static;
+      width: fit-content;
+    }
     .nav-pill { transition: all 0.2s ease; }
     .nav-pill:hover { background: #f0f0f0; }
     .nav-pill.active { background: #1d1d1f; color: #fff; }
@@ -114,17 +124,10 @@
 </head>
 <body class="bg-surface font-sans text-[#1d1d1f] min-h-screen">
 
-  <!-- Navigation -->
-  <nav class="fixed top-3 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-max -translate-x-1/2 sm:top-4">
-    <div class="flex items-center justify-between gap-1 bg-white/80 backdrop-blur-xl rounded-full px-1.5 py-1.5 shadow-sm border border-black/5 sm:justify-center">
-      <a href="#home" class="nav-pill active rounded-full px-3 py-2 text-xs font-medium sm:px-4 sm:py-1.5 sm:text-sm">Home</a>
-      <a href="#spotlight" class="nav-pill rounded-full px-3 py-2 text-xs font-medium text-[#1d1d1f]/70 flex items-center gap-1 sm:px-4 sm:py-1.5 sm:text-sm">
-        <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Work
-      </a>
-      <a href="#journey" class="nav-pill rounded-full px-3 py-2 text-xs font-medium text-[#1d1d1f]/70 sm:px-4 sm:py-1.5 sm:text-sm">Journey</a>
-      <a href="#contact" class="nav-pill rounded-full px-3 py-2 text-xs font-medium text-[#1d1d1f]/70 sm:px-4 sm:py-1.5 sm:text-sm">Contact</a>
-    </div>
-  </nav>
+  <a href="#contact" class="fixed top-3 right-3 z-50 inline-flex items-center gap-2 rounded-full border border-black/5 bg-white/85 px-4 py-2 text-xs font-semibold text-[#1d1d1f] shadow-sm backdrop-blur-xl transition hover:bg-white sm:top-4 sm:right-4 sm:text-sm">
+    Contact
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+  </a>
 
   <main class="max-w-[1200px] mx-auto px-3 pt-24 pb-10 sm:px-4 sm:pt-20 sm:pb-12">
 
@@ -546,10 +549,12 @@
               <span class="px-2 py-0.5 bg-violet-50 text-violet-600 rounded text-[10px] font-medium">500+ users</span>
             </div>
           </div>
-          <a href="https://udify.app/chat/0DtZbFvBiG6U5lce" target="_blank" rel="noopener noreferrer" class="card-link">
-            Try Cover Me
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
-          </a>
+          <div class="card-actions">
+            <a href="https://udify.app/chat/0DtZbFvBiG6U5lce" target="_blank" rel="noopener noreferrer" class="card-link">
+              Try Cover Me
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+            </a>
+          </div>
         </div>
 
         <!-- GPT-2 Deep Learning -->
@@ -566,12 +571,12 @@
               <span class="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-[10px] font-medium">Deep Learning</span>
             </div>
           </div>
-          <div class="flex flex-wrap gap-2" style="position: relative;">
-            <a href="https://github.com/dino1908/GPT2" target="_blank" rel="noopener noreferrer" class="card-link" style="position: relative; left: 0;">
+          <div class="card-actions">
+            <a href="https://github.com/dino1908/GPT2" target="_blank" rel="noopener noreferrer" class="card-link">
               GPT-2
               <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
             </a>
-            <a href="https://github.com/dino1908/Optimized_GPT2" target="_blank" rel="noopener noreferrer" class="card-link" style="position: relative; left: 0;">
+            <a href="https://github.com/dino1908/Optimized_GPT2" target="_blank" rel="noopener noreferrer" class="card-link">
               Optimized
               <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
             </a>
@@ -593,10 +598,12 @@
               <span class="px-2 py-0.5 bg-cyan-50 text-cyan-600 rounded text-[10px] font-medium">Unsloth</span>
             </div>
           </div>
-          <a href="https://github.com/dino1908/GenAI_POC_streamlit" target="_blank" rel="noopener noreferrer" class="card-link">
-            GitHub
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
-          </a>
+          <div class="card-actions">
+            <a href="https://github.com/dino1908/GenAI_POC_streamlit" target="_blank" rel="noopener noreferrer" class="card-link">
+              GitHub
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -708,54 +715,11 @@
     </section>
   </main>
 
-  <footer class="text-center py-6 text-xs text-muted">
-    <p>Built by a Monkey (Me) with a Magic Wand (Claude Code) in 2026</p>
+  <footer class="max-w-[1200px] mx-auto px-3 pb-6 sm:px-4 sm:pb-8">
+    <p class="max-w-md mx-auto text-center text-[11px] leading-relaxed text-muted sm:text-xs">
+      Built by a Monkey (Me) with a Magic Wand (Claude Code) in 2026
+    </p>
   </footer>
-
-  <!-- Navigation active state handler -->
-  <script>
-    const navLinks = document.querySelectorAll('.nav-pill');
-
-    function updateNav() {
-      let current = '';
-      const scrollY = window.scrollY + 120;
-      document.querySelectorAll('[id]').forEach(section => {
-        if (section.offsetTop <= scrollY) {
-          current = section.id;
-        }
-      });
-      const idToNav = {
-        'home': '#home',
-        'spotlight': '#spotlight',
-        'journey': '#journey',
-        'education': '#journey',
-        'builds': '#spotlight',
-        'contact': '#contact'
-      };
-      const activeHref = idToNav[current] || '#home';
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        link.classList.add('text-[#1d1d1f]/70');
-        if (link.getAttribute('href') === activeHref) {
-          link.classList.add('active');
-          link.classList.remove('text-[#1d1d1f]/70');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', updateNav, { passive: true });
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  </script>
 
 </body>
 </html>
