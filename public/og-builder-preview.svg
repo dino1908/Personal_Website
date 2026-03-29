@@ -1,0 +1,59 @@
+<svg width="1200" height="627" viewBox="0 0 1200 627" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="95" y1="72" x2="1081" y2="558" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF7EF"/>
+      <stop offset="1" stop-color="#EEF5FF"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="148" y1="133" x2="449" y2="477" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102542"/>
+      <stop offset="1" stop-color="#183B67"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="220" y1="203" x2="405" y2="415" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A3D"/>
+      <stop offset="1" stop-color="#F54E42"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="627" rx="36" fill="url(#bg)"/>
+  <circle cx="1039" cy="128" r="124" fill="#DCEAFF"/>
+  <circle cx="110" cy="557" r="126" fill="#FFF0D9"/>
+  <path d="M637 96H1113" stroke="#D3DDEA" stroke-width="2" stroke-dasharray="8 10"/>
+  <path d="M637 530H1113" stroke="#D3DDEA" stroke-width="2" stroke-dasharray="8 10"/>
+
+  <rect x="118" y="121" width="342" height="342" rx="48" fill="url(#panel)"/>
+  <rect x="151" y="154" width="276" height="276" rx="36" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+
+  <rect x="196" y="205" width="66" height="178" rx="20" fill="#F7F0E4"/>
+  <rect x="250" y="205" width="66" height="66" rx="20" fill="#32B7A0"/>
+  <rect x="250" y="285" width="66" height="98" rx="20" fill="url(#accent)"/>
+  <path d="M327 205H382C411.271 205 435 228.729 435 258C435 287.271 411.271 311 382 311H327V205Z" fill="#F7F0E4"/>
+  <path d="M327 329H381.5C411.047 329 435 352.953 435 382.5V383H327V329Z" fill="#32B7A0"/>
+  <circle cx="398" cy="206" r="18" fill="#FFD058"/>
+  <path d="M398 178V150" stroke="#FFD058" stroke-width="10" stroke-linecap="round"/>
+  <path d="M430 194L452 180" stroke="#FFD058" stroke-width="10" stroke-linecap="round"/>
+  <path d="M366 194L344 180" stroke="#FFD058" stroke-width="10" stroke-linecap="round"/>
+
+  <path d="M550 170H1089" stroke="#102542" stroke-opacity="0.08" stroke-width="2"/>
+  <text x="550" y="238" fill="#102542" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="700" letter-spacing="-1.6">
+    Roshan Pasupathi
+  </text>
+  <text x="550" y="303" fill="#355070" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">
+    PM building with AI and prototypes
+  </text>
+  <text x="550" y="389" fill="#102542" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="600">
+    Builder mode: on
+  </text>
+  <text x="550" y="430" fill="#516377" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="400">
+    From idea to working product in hours, not weeks.
+  </text>
+
+  <rect x="550" y="469" width="334" height="54" rx="27" fill="#102542"/>
+  <text x="591" y="504" fill="#F8FBFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">
+    roshan-pasupathi.onrender.com
+  </text>
+
+  <rect x="870" y="469" width="171" height="54" rx="27" fill="#FFFFFF"/>
+  <text x="911" y="504" fill="#F54E42" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">
+    BUILD FAST
+  </text>
+</svg>
