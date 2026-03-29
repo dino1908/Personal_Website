@@ -38,22 +38,6 @@
     Roshan Pasupathi
   </text>
   <text x="550" y="303" fill="#355070" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">
-    PM building with AI and prototypes
-  </text>
-  <text x="550" y="389" fill="#102542" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="600">
-    Builder mode: on
-  </text>
-  <text x="550" y="430" fill="#516377" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="400">
-    From idea to working product in hours, not weeks.
-  </text>
-
-  <rect x="550" y="469" width="334" height="54" rx="27" fill="#102542"/>
-  <text x="591" y="504" fill="#F8FBFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">
-    roshan-pasupathi.onrender.com
-  </text>
-
-  <rect x="870" y="469" width="171" height="54" rx="27" fill="#FFFFFF"/>
-  <text x="911" y="504" fill="#F54E42" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">
-    BUILD FAST
+    Building and Prototyping with AI
   </text>
 </svg>
